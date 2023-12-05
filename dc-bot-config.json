@@ -1,0 +1,17 @@
+{
+  "test_bots":[
+    {
+      "name": "NAME",
+      "prefix": "xx.",
+      "description": "NAI bot",
+      "extension_path": "kohaku_nai.dc_bot_modules.nai_bot",
+      "token": "YOUR TOKEN",
+      "intents": true,
+      "url": "http://127.0.0.1:7000",
+      "password": "123456"
+    }
+  ],
+  "python-script": "python",
+  "pyinstaller": false,
+  "pyinstaller-script": "runner.exe"
+}

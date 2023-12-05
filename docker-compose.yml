@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  kohaku-nai:
+    build: .
+    # 將本地端的 config.toml 與 dc-bot-config.json 掛載到容器內
+    volumes:
+      - ./config.toml:/Kohaku-NAI/config.toml
+      - ./dc-bot-config.json:/Kohaku-NAI/dc-bot-config.json
+    # 執行指令若為dc_bot則改為 python3 -m kohaku_nai.dc_bot
+    command: python3 -m kohaku_nai.server
+    # 將容器內的 7000 port 對應到本地端的 7000 port
+    # 此端口為 Generation Server 端口
+    ports:
+      - "7000:7000"
